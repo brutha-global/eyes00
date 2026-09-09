@@ -12,16 +12,16 @@ import {
 import { site, ticketTiers } from "@/lib/site";
 import { ExternalLink } from "lucide-react";
 
-function buildZeffyUrl(rateId?: string) {
+function buildTicketUrl(rateId?: string) {
   const base = site.zeffy.embedUrl;
-  if (!rateId) return base;
+  if (!rateId || !base.includes("zeffy.com")) return base;
   const items = JSON.stringify([{ rateId, quantity: 1 }]);
   return `${base}?items=${encodeURIComponent(items)}`;
 }
 
 function buildDirectUrl(rateId?: string) {
   const base = site.zeffy.directUrl;
-  if (!rateId) return base;
+  if (!rateId || !base.includes("zeffy.com")) return base;
   const items = JSON.stringify([{ rateId, quantity: 1 }]);
   return `${base}?items=${encodeURIComponent(items)}`;
 }
@@ -37,7 +37,7 @@ export function TicketDialog({
 
   const tier = tierId ? ticketTiers.find((t) => t.id === tierId) : undefined;
   const rateId = tier?.zeffyRateId;
-  const src = buildZeffyUrl(rateId);
+  const src = buildTicketUrl(rateId);
   const directLink = buildDirectUrl(rateId);
 
   return (
@@ -59,7 +59,7 @@ export function TicketDialog({
         <div className="relative bg-white">
           <iframe
             key={open ? `open-${tierId ?? "all"}` : "closed"}
-            title={`Eyes Wide Shut 2 — ${tier?.name ?? "Ticketing"} by Zeffy`}
+            title={`Eyes Wide Shut 2 — ${tier?.name ?? "Ticketing"}`}
             src={src}
             className="h-[70vh] max-h-[760px] w-full"
             allow="payment"
@@ -69,7 +69,7 @@ export function TicketDialog({
 
         <div className="flex flex-col items-center gap-1 border-t border-primary/20 px-6 py-3 text-center text-xs text-muted-foreground">
           <span>
-            Secure checkout powered by Zeffy · 100% of your payment goes to the event.
+            Secure checkout powered by Ticketleap · All sales final.
           </span>
           <a
             href={directLink}

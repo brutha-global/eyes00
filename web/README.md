@@ -3,7 +3,7 @@
 A sleek, immersive black-and-gold masquerade website for **Eyes Wide Shut 2**, an exclusive
 VIP luxury soirée presented by VAB Bookings, headlined by Gary "Lil G" Jenkins of SILK.
 
-Built with **Next.js 16 · React 19 · Tailwind v4 · shadcn/UI (Base UI)**. Ticketing via **Zeffy**.
+Built with **Next.js 16 · React 19 · Tailwind v4 · shadcn/UI (Base UI)**. Ticketing via **Ticketleap**.
 
 ## Run locally
 
@@ -29,24 +29,19 @@ Almost everything is driven from **`src/lib/site.ts`**:
 - **FAQ** (`faqs`)
 - Marquee ticker words
 
-### Swap in your real Zeffy link (important)
+### Ticketing link
 
-In `src/lib/site.ts`, update the `zeffy` block:
+In `src/lib/site.ts`, update the ticketing block:
 
 ```ts
 zeffy: {
-  embedUrl: "https://www.zeffy.com/embed/ticketing/<your-campaign-slug>",
-  directUrl: "https://www.zeffy.com/ticketing/<your-campaign-slug>",
+  embedUrl: "https://events.ticketleap.com/events/vabbookings",
+  directUrl: "https://events.ticketleap.com/events/vabbookings",
   isPlaceholder: false,
 }
 ```
 
-- `embedUrl` is what loads inside the "Get Tickets" modal (use the **/embed/** form).
-- `directUrl` is the fallback "open in a new tab" link.
-- Find both in your Zeffy campaign under the **Share / Embed** panel once it is live.
-
-Every "Get Tickets / Reserve" button across the site opens the same Zeffy modal, so you only
-change it in this one place.
+Every "Get Tickets / Reserve" button across the site opens the ticketing modal with a direct fallback link.
 
 ## Assets
 

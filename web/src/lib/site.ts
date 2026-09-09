@@ -45,8 +45,8 @@ export const site = {
   },
 
   zeffy: {
-    embedUrl: "https://www.zeffy.com/en-US/embed/ticketing/eyes-wide-shut--2",
-    directUrl: "https://www.zeffy.com/en-US/ticketing/eyes-wide-shut--2",
+    embedUrl: "https://events.ticketleap.com/events/vabbookings",
+    directUrl: "https://events.ticketleap.com/events/vabbookings",
     isPlaceholder: false,
   },
 } as const;
@@ -176,7 +176,7 @@ export const faqs = [
   },
   {
     q: "How do tickets work?",
-    a: "All tickets are sold securely through Zeffy. Once you complete checkout you'll receive an email confirmation and entry credentials. Tickets are limited and expected to sell out.",
+    a: "All tickets are sold securely through Ticketleap. Once you complete checkout you'll receive an email confirmation and entry credentials. Tickets are limited and expected to sell out.",
   },
   {
     q: "What's included with my ticket?",

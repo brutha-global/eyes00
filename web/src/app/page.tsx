@@ -377,7 +377,7 @@ export default function Home() {
                 Tickets Go on Sale {site.ticketSaleDate}
               </p>
               <p className="mt-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                Secure checkout via Zeffy · Fee-free ticketing · All sales final
+                Secure checkout via Ticketleap · All sales final
               </p>
             </Reveal>
           </div>
