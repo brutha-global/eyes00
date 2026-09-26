@@ -16,6 +16,7 @@ import {
   Gift,
 } from "lucide-react";
 import { Splash } from "@/components/splash";
+import { ReplayIntroButton } from "@/components/replay-intro";
 import { SiteNav } from "@/components/site-nav";
 import { GoldParticles } from "@/components/gold-particles";
 import { Mask } from "@/components/mask";
@@ -617,6 +618,7 @@ export default function Home() {
             <p>
               © 2026 {site.presenter}. All rights reserved.
             </p>
+            <ReplayIntroButton />
             <p className="uppercase tracking-[0.25em]">
               {site.dateLabel} · {site.agePolicy}
             </p>

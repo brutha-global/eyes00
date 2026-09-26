@@ -56,7 +56,7 @@ export default function RootLayout({
       className={`${display.variable} ${decorative.variable} ${cormorant.variable} ${body.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preload" href="/assets/splash.mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="/eyes.mp4" as="video" type="video/mp4" />
       </head>
       <body className="grain min-h-full flex flex-col bg-background text-foreground">
         {children}
